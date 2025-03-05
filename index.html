@@ -3,129 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Engineer Portfolio</title>
+    <title>Olivia Motevalli | Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-darker: #0b1120;
+            --accent-color: #6366f1;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+        }
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .tech-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .tech-icon:hover {
+            transform: scale(1.2);
+            color: var(--accent-color);
         }
         .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(99, 102, 241, 0.1);
         }
         .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            border-color: rgba(99, 102, 241, 0.3);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
-    <!-- Navigation -->
-    <nav class="bg-gray-800 p-4 fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white">Jane Doe</h1>
-            <div class="space-x-4">
-                <a href="#about" class="text-gray-300 hover:text-white">About</a>
-                <a href="#skills" class="text-gray-300 hover:text-white">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-white">Projects</a>
-                <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+<body class="text-gray-100">
+    <div class="bg-[var(--bg-darker)] fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">
+                Olivia Motevalli
             </div>
+            <nav class="space-x-6">
+                <a href="#about" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">About</a>
+                <a href="#skills" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">Skills</a>
+                <a href="#projects" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">Projects</a>
+                <a href="#contact" class="text-[var(--text-primary)] bg-[var(--accent-color)] px-4 py-2 rounded-md hover:bg-opacity-90 transition-all">Contact</a>
+            </nav>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <header class="pt-24 pb-16 text-center bg-gray-800">
-        <div class="container mx-auto px-4">
-            <img src="/api/placeholder/200/200" alt="Profile" class="mx-auto rounded-full w-48 h-48 mb-6 object-cover border-4 border-gray-600">
-            <h1 class="text-4xl font-bold mb-4">Jane Doe</h1>
-            <p class="text-xl text-gray-400">Software Engineer | Full Stack Developer</p>
-            <div class="mt-6 space-x-4">
-                <a href="#" class="fab fa-github text-3xl text-gray-300 hover:text-white"></a>
-                <a href="#" class="fab fa-linkedin text-3xl text-gray-300 hover:text-white"></a>
-                <a href="#" class="fab fa-twitter text-3xl text-gray-300 hover:text-white"></a>
+    <main class="max-w-6xl mx-auto px-4 pt-24">
+        <header class="flex items-center justify-between mb-24">
+            <div class="w-2/3">
+                <h1 class="text-5xl font-bold mb-4 text-[var(--text-primary)]">
+                    Engineering Digital Solutions
+                </h1>
+                <p class="text-xl text-[var(--text-secondary)] mb-6">
+                    Full Stack Developer | 3 Years of Professional Experience
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/rich-olive" target="_blank" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] text-2xl transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ommote" target="_blank" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] text-2xl transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
-            <p class="text-gray-300 max-w-2xl mx-auto text-center">
-                Passionate software engineer with 5+ years of experience in developing scalable web applications. 
-                Specialized in full-stack development with expertise in JavaScript, React, Node.js, and cloud technologies.
-            </p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full">JavaScript</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full">React</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full">Node.js</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full">Python</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full">Docker</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full">AWS</span>
+            <div class="w-1/3 flex justify-end">
+                <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-[var(--accent-color)]">
+                    <img src="/api/placeholder/300/300" alt="Olivia Motevalli" class="w-full h-full object-cover">
+                </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+        <section id="skills" class="mb-24">
+            <h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">Tech Stack</h2>
+            <div class="grid grid-cols-4 gap-6">
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon group">
+                    <i class="fab fa-js text-5xl mb-4 text-yellow-400"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">JavaScript</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <i class="fab fa-react text-5xl mb-4 text-cyan-400"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">React</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <i class="fab fa-node text-5xl mb-4 text-green-600"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">Node.js</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <i class="fas fa-database text-5xl mb-4 text-blue-500"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">MongoDB</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <i class="fas fa-table text-5xl mb-4 text-indigo-500"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">PostgreSQL</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <i class="fab fa-java text-5xl mb-4 text-red-500"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">Java</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.33.106.3.073.26.059.2.048.187V8.5l-.001.91-.01.787-.02.726-.03.538-.04.363-.047.265-.056.208-.059.169-.061.132-.021.011-.12.07-.184.101-.199.033-.19.023-.204.02-.185.015-.165.01-.885.01h-2l-1.145-.01-.88-.01-.76-.03-.59-.06-.46-.07-.31-.094-.21-.09-.13-.094-.13-.094-.094-.135-.083-.132-.067-.148-.037-.165-.014-.197.006-.195.02-.19.043-.177.066-.163.074-.135.082-.115.09-.1.094-.072.104-.048.090-.036.088-.02.094-.016.084-.01.083-.002 1.14.01h.01l.89.01.737.02.563.05.463.06.373.07.291.09.212.11.151.13.105.144.07.167.036.188.02.21.006.232V19l-.1.09-.14.08-.18.063-.23.05-.27.03-.32.01h-2.5l-.192-.01-.336-.03-.479-.07-.59-.13-.653-.21-.66-.34-1.672-1.04-1.179-1.1-.77-1.01-.46-1.06-.28-1.06-.11-1.05.09-1.04.27-1.03.47-1.02.64-1 .81-.93 1.11-1.02 1.26-.97 1.47-.9 1.71-.81 1.99-.72 2.08-.59 2.07-.45 1.96-.3 1.77-.16 1.5-.05 1.19.06m.11 18.16l.02.04.03.04.03.02.02.05.04.06.03.04.04.04.04.05.06.04.04.04.04.05.05.04.04.04.1.08.1.07.11.06.12.05.13.05.14.04.16.04.17.03.19.02.2.02.2.01c.13 0 .25-.01.37-.03l.19-.04.18-.05.17-.06.15-.08.14-.09.13-.1.12-.11.11-.12.1-.13.09-.14.08-.15.07-.16.06-.17.05-.18.04-.19.03-.2.02-.2V8.91l-.03-.17-.04-.16-.04-.15-.06-.15-.07-.14-.08-.13-.1-.12-.11-.11-.12-.1-.13-.09-.15-.08-.16-.06-.17-.05-.18-.04-.19-.03-.2-.02H14.5l-.2.02-.19.03-.18.04-.17.05-.16.06-.15.08-.14.09-.13.1-.12.11-.11.12-.1.13-.09.14-.08.15-.07.16-.06.17-.05.18-.04.19-.03.2-.02.2V19l.03.17.04.16.04.15.06.15.07.14.08.13.1.12.11.11.12.1.13.09.15.08.16.06.17.05.18.04.19.03.2.02.2.01c.13 0 .25-.01.37-.03l.19-.04.18-.05.17-.06.15-.08.14-.09.13-.1.12-.11.11-.12.1-.13.09-.14.08-.15.07-.16.06-.17.05-.18.04-.19.03-.2.02-.2V8.91l-.03-.17-.04-.16-.04-.15-.06-.15-.07-.14-.08-.13-.1-.12-.11-.11-.12-.1-.13-.09-.15-.08-.16-.06-.17-.05-.18-.04-.19-.03-.2-.02h-2.51l-.2.02Zm-4.5 1.92c-.1 0-.2-.01-.3-.02l-.2-.04-.19-.06-.18-.08-.17-.09-.15-.11-.14-.12-.13-.14-.12-.15-.11-.17-.09-.17-.08-.18-.07-.19-.06-.2-.04-.21-.03-.21V8.69l.05-.2.02-.2.03-.19.04-.19.05-.18.06-.18.08-.17.09-.17.1-.16.11-.15.13-.14.14-.13.16-.11.17-.1.18-.08.19-.07.2-.06.21-.04.22-.03h3.19l.21.03.2.04.19.06.18.08.17.09.15.11.14.12.13.14.12.15.11.17.09.17.08.18.07.19.06.2.04.21.03.21V19l-.05.2-.02.2-.03.19-.04.19-.05.18-.06.18-.08.17-.09.17-.1.16-.11.15-.13.14-.14.13-.16.11-.17.1-.18.08-.19.07-.2.06-.21.04-.22.03H9.91Zm-4.5-1.72c-.1 0-.2-.01-.3-.02l-.2-.04-.19-.06-.18-.08-.17-.09-.15-.11-.14-.12-.13-.14-.12-.15-.11-.17-.09-.17-.08-.18-.07-.19-.06-.2-.04-.21-.03-.21V8.69l.05-.2.02-.2.03-.19.04-.19.05-.18.06-.18.08-.17.09-.17.1-.16.11-.15.13-.14.14-.13.16-.11.17-.1.18-.08.19-.07.2-.06.21-.04.22-.03h3.19l.21.03.2.04.19.06.18.08.17.09.15.11.14.12.13.14.12.15.11.17.09.17.08.18.07.19.06.2.04.21.03.21V19l-.05.2-.02.2-.03.19-.04.19-.05.18-.06.18-.08.17-.09.17-.1.16-.11.15-.13.14-.14.13-.16.11-.17.1-.18.08-.19.07-.2.06-.21.04-.22.03H5.41Z"/>
+                    </svg>
+                    <h3 class="font-semibold text-[var(--text-primary)]">Spring Boot</h3>
+                </div>
+                <div class="bg-[var(--bg-darker)] p-6 rounded-xl text-center tech-icon">
+                    <i class="fab fa-python text-5xl mb-4 text-blue-600"></i>
+                    <h3 class="font-semibold text-[var(--text-primary)]">Python</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-24">
+            <h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">Selected Projects</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-gray-800 rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-white">E-Commerce Platform</h3>
-                    <p class="text-gray-400 mb-4">Full-stack e-commerce application with React and Node.js</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Project</a>
-                        <a href="#" class="fab fa-github text-2xl text-gray-300 hover:text-white"></a>
+                <div class="project-card bg-[var(--bg-darker)] rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">Archives Automation Script</h3>
+                    <p class="text-[var(--text-secondary)] mb-4">Developed a Python automation script for streamlining document processing workflows at the National Archives, reducing manual data entry by 75% and improving overall operational efficiency.</p>
+                    <div class="flex justify-between items-center">
+ <div class="flex justify-between items-center">
+                        <a href="#" class="bg-[var(--accent-color)] text-white px-4 py-2 rounded-md hover:bg-opacity-90">View Project</a>
+                        <a href="https://github.com/rich-olive" target="_blank" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)]">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="project-card bg-gray-800 rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-white">Task Management App</h3>
-                    <p class="text-gray-400 mb-4">Productivity tool built with Vue.js and Firebase</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Project</a>
-                        <a href="#" class="fab fa-github text-2xl text-gray-300 hover:text-white"></a>
-                    </div>
+
+                <!-- Placeholder for 4 more project cards -->
+                <div class="project-card bg-[var(--bg-darker)] rounded-xl p-6 opacity-50">
+                    <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">Project Coming Soon</h3>
+                    <p class="text-[var(--text-secondary)] mb-4">Additional projects in development. Check back for updates.</p>
                 </div>
-                <!-- Project 3 -->
-                <div class="project-card bg-gray-800 rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-white">Machine Learning Dashboard</h3>
-                    <p class="text-gray-400 mb-4">Data visualization dashboard using Python and D3.js</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Project</a>
-                        <a href="#" class="fab fa-github text-2xl text-gray-300 hover:text-white"></a>
-                    </div>
+                <div class="project-card bg-[var(--bg-darker)] rounded-xl p-6 opacity-50">
+                    <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">Project Coming Soon</h3>
+                    <p class="text-[var(--text-secondary)] mb-4">Additional projects in development. Check back for updates.</p>
+                </div>
+                <div class="project-card bg-[var(--bg-darker)] rounded-xl p-6 opacity-50">
+                    <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">Project Coming Soon</h3>
+                    <p class="text-[var(--text-secondary)] mb-4">Additional projects in development. Check back for updates.</p>
+                </div>
+                <div class="project-card bg-[var(--bg-darker)] rounded-xl p-6 opacity-50">
+                    <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">Project Coming Soon</h3>
+                    <p class="text-[var(--text-secondary)] mb-4">Additional projects in development. Check back for updates.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
-            <form class="max-w-md mx-auto">
-                <input type="text" placeholder="Name" class="w-full mb-4 p-3 bg-gray-700 text-gray-200 rounded">
-                <input type="email" placeholder="Email" class="w-full mb-4 p-3 bg-gray-700 text-gray-200 rounded">
-                <textarea placeholder="Message" class="w-full mb-4 p-3 bg-gray-700 text-gray-200 rounded" rows="4"></textarea>
-                <button class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <section id="contact" class="bg-[var(--bg-darker)] rounded-xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-[var(--text-primary)]">Let's Connect</h2>
+            <p class="text-[var(--text-secondary)] mb-8">Interested in collaborating or discussing innovative tech solutions?</p>
+            <a href="mailto:olivia.motevalli@example.com" class="bg-[var(--accent-color)] text-white px-8 py-3 rounded-md text-lg hover:bg-opacity-90 transition-all">
+                Get in Touch
+            </a>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 text-center">
-        <p class="text-gray-500">&copy; 2024 Jane Doe. All Rights Reserved.</p>
+    <footer class="bg-[var(--bg-darker)] py-6 mt-12 text-center">
+        <p class="text-[var(--text-secondary)]">© 2024 Olivia Motevalli. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
